@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from "react";
 import { Button, Modal, ModalHeader, ModalBody } from "reactstrap";
-import NewFoodForm from "./NewFoodForm";
+import NewExerciseForm from "./NewExerciseForm";
 
-class NewFoodModal extends Component {
+class NewExerciseModal extends Component {
     state = {
         modal: false
     }
@@ -16,10 +16,10 @@ class NewFoodModal extends Component {
     render() {
         const create = this.props.create;
 
-        let title = "Editing Food";
+        let title = "Editing exercise";
         let button = <Button onClick={this.toggle}>Edit</Button>;
         if (create) {
-            title = "Creating Food";
+            title = "Creating exercise";
 
             button = (
                 <Button
@@ -40,10 +40,10 @@ class NewFoodModal extends Component {
                     <ModalHeader toggle={this.toggle}>{title}</ModalHeader>
 
                     <ModalBody>
-                        <NewFoodForm
+                        <NewExerciseForm
                             resetState={this.props.resetState}
                             toggle={this.toggle}
-                            food={this.props.food}
+                            exercise={this.props.exercise}
                         />
                     </ModalBody>
                 </Modal>
@@ -52,4 +52,4 @@ class NewFoodModal extends Component {
     }
 }
 
-export default NewFoodModal
+export default NewExerciseModal

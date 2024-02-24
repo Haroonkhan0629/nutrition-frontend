@@ -2,12 +2,13 @@ import React, { Component } from "react";
 
 class DetailView extends Component {
     render() {
-        const food = this.props.food
+        const exercise = this.props.exercise
         return (
             <div>
-                <h2>{food.protein}</h2>
-                <h2>{food.fats}</h2>
-                <h2>{food.carbs}</h2>
+                <p>{exercise.muscle} </p>
+                <p>{exercise.difficulty} </p>
+                <p>{exercise.description} </p>
+                <img src={exercise.image} alt="none"/>
             </div>
         )
     }

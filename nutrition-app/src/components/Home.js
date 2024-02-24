@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Col, Container, Row } from "reactstrap";
-import FoodList from "./FoodList";
-import NewFoodModal from "./NewFoodModal";
+import { Container } from "reactstrap";
+import ExerciseList from "./ExerciseList";
+import NewExerciseModal from "./NewExerciseModal";
 
 import axios from "axios";
 
@@ -11,37 +11,35 @@ axios.defaults.withCredentials = true;
 
 class Home extends Component {
   state = {
-    foods: []
+    exercises: []
   };
 
   componentDidMount() {
     this.resetState();
   }
 
-  getFood = () => {
-    axios.get(API_URL).then(res => this.setState({ foods: res.data }));
+  getExercise = () => {
+    axios.get(API_URL).then(res => this.setState({ exercises: res.data }));
   };
 
   resetState = () => {
-    this.getFood();
+    this.getExercise();
   };
 
   render() {
     return (
       <Container style={{ marginTop: "20px" }}>
-        <Row>
-          <Col>
-            <FoodList
-              foods={this.state.foods}
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Exercises</li>
+          </ol>
+        </nav>
+            <ExerciseList
+              exercises={this.state.exercises}
               resetState={this.resetState}
             />
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <NewFoodModal create={true} resetState={this.resetState} />
-          </Col>
-        </Row>
+            <NewExerciseModal create={true} resetState={this.resetState} />
       </Container>
     );
   }

@@ -14,21 +14,21 @@ class DetailModal extends Component {
     };
 
     render() {
-        const food = this.props.food
-        let button = <Button onClick={this.toggle}>View</Button>;
+        const exercise = this.props.exercise
+        let button = <Button style={{backgroundColor: "white", color: "black", border: "none"}} onClick={this.toggle}>{exercise.name}</Button>;
 
 
         return (
             <Fragment>
                 {button}
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
-                    <ModalHeader>{food.name}</ModalHeader>
+                    <ModalHeader>{exercise.name}</ModalHeader>
 
                     <ModalBody>
                         <DetailView
                             resetState={this.props.resetState}
                             toggle={this.toggle}
-                            food={this.props.food}
+                            exercise={this.props.exercise}
                         />
                     </ModalBody>
                 </Modal>

@@ -7,20 +7,20 @@ import { API_URL } from "../constants";
 
 axios.defaults.withCredentials = true;
 
-class NewFoodForm extends React.Component {
+class NewExerciseForm extends React.Component {
     state = {
         id: 0,
         name: '',
-        protein: '',
-        fats: '',
-        carbs: '',
+        muscle: '',
+        difficulty: '',
+        description: '',
         image: ''
     }
 
     componentDidMount() {
-        if (this.props.food) {
-            const { id, name, protein, fats, carbs, image } = this.props.food
-            this.setState({ id, name, protein, fats, carbs, image })
+        if (this.props.exercise) {
+            const { id, name, muscle, difficulty, description, image } = this.props.exercise
+            this.setState({ id, name, muscle, difficulty, description, image })
         }
     }
 
@@ -28,7 +28,7 @@ class NewFoodForm extends React.Component {
         this.setState({ [e.target.name]: e.target.value })
     }
 
-    createFood = e => {
+    createExercise = e => {
         e.preventDefault()
         axios.post(API_URL, this.state).then(() => {
             this.props.resetState()
@@ -36,7 +36,7 @@ class NewFoodForm extends React.Component {
         })
     }
 
-    editFood = e => {
+    editExercise = e => {
         e.preventDefault()
         axios.put(API_URL + this.state.id + "/", this.state).then(() => {
             this.props.resetState()
@@ -49,7 +49,7 @@ class NewFoodForm extends React.Component {
     };
     render() {
         return (
-            <Form onSubmit={this.props.food ? this.editFood : this.createFood} >
+            <Form onSubmit={this.props.exercise ? this.editExercise : this.createExercise} >
                 <FormGroup>
                     <Label for="name">Name:</Label>
                     <Input
@@ -60,30 +60,30 @@ class NewFoodForm extends React.Component {
                     />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="protein">Protein:</Label>
+                    <Label for="muscle">muscle:</Label>
                     <Input
                         type="text"
-                        name="protein"
+                        name="muscle"
                         onChange={this.onChange}
-                        value={this.defaultIfEmpty(this.state.protein)}
+                        value={this.defaultIfEmpty(this.state.muscle)}
                     />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="fats">Fats:</Label>
+                    <Label for="difficulty">difficulty:</Label>
                     <Input
                         type="text"
-                        name="fats"
+                        name="difficulty"
                         onChange={this.onChange}
-                        value={this.defaultIfEmpty(this.state.fats)}
+                        value={this.defaultIfEmpty(this.state.difficulty)}
                     />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="carbs">Carbs:</Label>
+                    <Label for="description">description:</Label>
                     <Input
                         type="text"
-                        name="carbs"
+                        name="description"
                         onChange={this.onChange}
-                        value={this.defaultIfEmpty(this.state.carbs)}
+                        value={this.defaultIfEmpty(this.state.description)}
                     />
                 </FormGroup>
                 <FormGroup>
@@ -101,4 +101,4 @@ class NewFoodForm extends React.Component {
     }
 }
 
-export default NewFoodForm;
+export default NewExerciseForm;
