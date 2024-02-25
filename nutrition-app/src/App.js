@@ -1,14 +1,16 @@
+import './App.css';
 import React, { useState, useEffect } from 'react';
 import { googleLogout, useGoogleLogin } from '@react-oauth/google';
 import { Routes, Route } from "react-router-dom";
-import Search from './components/Search';
 import Navigation from './components/Navigation';
-import Home from './components/Home';
-import HomeFolders from './components/HomeFolders';
-import LoginPage from './components/LoginPage';
+// import Search from './components/Search';
+// import Home from './components/Home';
+// import HomeFolders from './components/HomeFolders';
+// import LoginPage from './components/LoginPage';
 import Settings from './components/Settings';
+import LoginNav from './components/LoginNav';
+import UserPage from './components/UserPage';
 import axios from 'axios';
-import './App.css';
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -27,9 +29,6 @@ const App = () => {
           headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${user['access_token']}`,
-            "Access-Control-Allow-Credentials": true,
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Headers": "*"
           }
         })
         .then(
@@ -81,14 +80,25 @@ const App = () => {
 
   return (
     <div>
-      <Navigation />
-      <Routes>
-        <Route path="" element={<HomeFolders />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/login" element={<LoginPage profile={profile} logout={logout} login={login} />} />
-        <Route path="/settings" element={<Settings />} />
-      </Routes>
+      {profile ? (
+        <div>
+          <LoginNav profile={profile} logout={logout} />
+          <Navigation />
+          <Routes>
+            <Route path="/login" element={<UserPage profile={profile} />} />
+            <Route path="/settings" element={<Settings profile={profile}/>} />
+          </Routes>
+        </div>
+      ) : (
+        <div>
+          <div className="login-container">
+            <button className="login-button" onClick={login}>
+              Sign in with Google
+            </button>
+          </div>
+          <Navigation />
+        </div>
+      )}
     </div>
   );
 }
@@ -96,3 +106,9 @@ const App = () => {
 export default App;
 
 
+          // <Routes>
+          //   <Route path="" element={<HomeFolders />} />
+          //   <Route path="/home" element={<Home />} />
+          //   <Route path="/search" element={<Search />} />
+          //   <Route path="/login" element={<LoginPage profile={profile} logout={logout} />} />
+          // </Routes>

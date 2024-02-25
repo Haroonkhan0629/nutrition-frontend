@@ -45,7 +45,7 @@ function UserPage({ profile }) {
 
   return (
     <div>
-      <h2> User Page </h2>
+      <h1> User Page </h1>
       <br />
       <p> {data} </p>
     </div>
