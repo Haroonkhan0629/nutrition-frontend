@@ -8,7 +8,7 @@ class DetailView extends Component {
                 <p>{exercise.muscle} </p>
                 <p>{exercise.difficulty} </p>
                 <p>{exercise.description} </p>
-                <div className="pic">
+                <div>
                 <img src={exercise.image} alt="none"/>
                 </div>
             </div>

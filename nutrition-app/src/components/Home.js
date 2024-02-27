@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Container } from "reactstrap";
 import ExerciseList from "./ExerciseList";
 import NewExerciseModal from "./NewExerciseModal";
+import { Link } from "react-router-dom";
 
 import axios from "axios";
 
@@ -19,7 +20,8 @@ class Home extends Component {
   }
 
   getExercise = () => {
-    axios.get(API_URL).then(res => this.setState({ exercises: res.data }));
+    axios.get(API_URL
+    ).then(res => this.setState({ exercises: res.data }));
   };
 
   resetState = () => {
@@ -31,15 +33,15 @@ class Home extends Component {
       <Container style={{ marginTop: "20px" }}>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><Link to="/">Home</Link></li>
             <li class="breadcrumb-item active" aria-current="page">Exercises</li>
           </ol>
         </nav>
-            <ExerciseList
-              exercises={this.state.exercises}
-              resetState={this.resetState}
-            />
-            <NewExerciseModal create={true} resetState={this.resetState} />
+        <ExerciseList
+          exercises={this.state.exercises}
+          resetState={this.resetState}
+        />
+        <NewExerciseModal create={true} resetState={this.resetState} />
       </Container>
     );
   }

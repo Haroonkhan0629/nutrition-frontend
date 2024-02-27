@@ -3,14 +3,13 @@ import React, { useState, useEffect } from 'react';
 import { googleLogout, useGoogleLogin } from '@react-oauth/google';
 import { Routes, Route } from "react-router-dom";
 import Navigation from './components/Navigation';
-// import Search from './components/Search';
-// import Home from './components/Home';
-// import HomeFolders from './components/HomeFolders';
-// import LoginPage from './components/LoginPage';
+import Search from './components/Search';
+import Home from './components/Home';
+import HomeFolders from './components/HomeFolders';
 import Settings from './components/Settings';
-import LoginNav from './components/LoginNav';
-import UserPage from './components/UserPage';
+import LoginPage from './components/LoginPage';
 import axios from 'axios';
+
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -80,35 +79,17 @@ const App = () => {
 
   return (
     <div>
-      {profile ? (
-        <div>
-          <LoginNav profile={profile} logout={logout} />
-          <Navigation />
-          <Routes>
-            <Route path="/login" element={<UserPage profile={profile} />} />
-            <Route path="/settings" element={<Settings profile={profile}/>} />
-          </Routes>
-        </div>
-      ) : (
-        <div>
-          <div className="login-container">
-            <button className="login-button" onClick={login}>
-              Sign in with Google
-            </button>
-          </div>
-          <Navigation />
-        </div>
-      )}
+      <Navigation />
+      <Routes>
+        <Route path="/login" element={<LoginPage profile={profile} logout={logout} login={login} />} />
+        <Route path="/" element={<HomeFolders profile={profile} />} />
+        <Route path="/settings" element={<Settings profile={profile} />} />
+        <Route path="/search" element={<Search profile={profile} />} />
+        <Route path="/home" element={<Home profile={profile} />} />
+      </Routes>
     </div>
   );
 }
 
 export default App;
 
-
-          // <Routes>
-          //   <Route path="" element={<HomeFolders />} />
-          //   <Route path="/home" element={<Home />} />
-          //   <Route path="/search" element={<Search />} />
-          //   <Route path="/login" element={<LoginPage profile={profile} logout={logout} />} />
-          // </Routes>

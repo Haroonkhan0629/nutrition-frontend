@@ -16,6 +16,12 @@
   margin-bottom: 250px;
 }
 
+img {
+  text-align: center;
+  max-width: 250px;
+  max-height: 250px;
+}
+
 .nav-link,
 .bottom-nav-link {
   color: #55575b;

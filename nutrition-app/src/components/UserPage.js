@@ -1,8 +1,9 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import LoginNav from "./LoginNav"
 
-function UserPage({ profile }) {
+function UserPage({ profile, logout }) {
 
   const [token, setToken] = useState(null);
   const [data, setData] = useState(null);
@@ -45,11 +46,11 @@ function UserPage({ profile }) {
 
   return (
     <div>
-      <h1> User Page </h1>
-      <br />
-      <p> {data} </p>
+      <LoginNav profile={profile} logout={logout} />
+      <h1> {data} </h1>
     </div>
   );
 }
 
 export default UserPage;
+

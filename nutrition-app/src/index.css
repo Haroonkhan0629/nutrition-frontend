@@ -1,8 +1,9 @@
-
-
-.pic {
-  text-align: center;
-  max-width: 250px;
-  max-height: 250px;
+.dark {
+  background-color: #333;
+  color: #fff;
+}
+.light {
+  background-color: #fff;
+  color: #333;
 }
 
