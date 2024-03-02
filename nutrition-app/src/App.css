@@ -39,7 +39,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: #f8f8f8;
 }
 
 .App {
@@ -253,7 +252,7 @@ li {
 
 .input-wrapper {
   background-color: white;
-  height: 2.5rem;
+  height: 3.5rem;
   padding: 0 15px;
   box-shadow: 0px 0px 8px rgb(198, 197, 197);
   display: flex;
@@ -268,8 +267,8 @@ li {
   background-color: white;
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
-  max-height: 250px;
+  margin-top: 50px;
+  max-height: 500px;
   overflow-y: scroll;
   position: absolute;
   left: 0;
@@ -301,3 +300,5 @@ li {
   text-decoration: none;
   color: black;
 }
+
+

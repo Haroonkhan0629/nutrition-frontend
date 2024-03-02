@@ -8,6 +8,7 @@ import Home from './components/Home';
 import HomeFolders from './components/HomeFolders';
 import Settings from './components/Settings';
 import LoginPage from './components/LoginPage';
+import Bookmarks from './components/Bookmarks';
 import axios from 'axios';
 
 
@@ -56,7 +57,7 @@ const App = () => {
 
       console.log(profileData);
 
-      axios.post('http://127.0.0.1:8000/api/auth/register/', profileData).then(
+      axios.post('https://nutrition-backend-qire.onrender.com/api/auth/register/', profileData).then(
         (response) => {
           console.log(response['data']);
         },
@@ -82,10 +83,11 @@ const App = () => {
       <Navigation />
       <Routes>
         <Route path="/login" element={<LoginPage profile={profile} logout={logout} login={login} />} />
-        <Route path="/" element={<HomeFolders profile={profile} />} />
         <Route path="/settings" element={<Settings profile={profile} />} />
-        <Route path="/search" element={<Search profile={profile} />} />
         <Route path="/home" element={<Home profile={profile} />} />
+        <Route path="/" element={<HomeFolders />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/bookmarks" element={<Bookmarks profile={profile} />} />
       </Routes>
     </div>
   );

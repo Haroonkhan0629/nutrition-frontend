@@ -18,7 +18,7 @@ function UserPage({ profile, logout }) {
     };
 
     const timeout = setTimeout(() => {
-      axios.post('http://127.0.0.1:8000/api/auth/login/', credentials)
+      axios.post('https://nutrition-backend-qire.onrender.com/api/auth/login/', credentials)
         .then((response) => {
           console.log(response['data']);
           setToken(response['data']['token']);
@@ -30,7 +30,7 @@ function UserPage({ profile, logout }) {
 
   useEffect(() => {
 
-    axios.get("http://127.0.0.1:8000/api/auth/hello/", {
+    axios.get("https://nutrition-backend-qire.onrender.com/api/auth/hello/", {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Token ' + token

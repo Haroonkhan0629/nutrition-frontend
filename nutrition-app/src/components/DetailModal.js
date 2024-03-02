@@ -15,7 +15,7 @@ class DetailModal extends Component {
 
     render() {
         const exercise = this.props.exercise
-        let button = <Button style={{backgroundColor: "white", color: "black", border: "none"}} onClick={this.toggle}>{exercise.name}</Button>;
+        let button = <Button className="view-button" style={{backgroundColor: "white", color: "black", border: "none"}} onClick={this.toggle}>{exercise.name}</Button>;
 
 
         return (
@@ -29,6 +29,7 @@ class DetailModal extends Component {
                             resetState={this.props.resetState}
                             toggle={this.toggle}
                             exercise={this.props.exercise}
+                            profile={this.props.profile}
                         />
                     </ModalBody>
                 </Modal>

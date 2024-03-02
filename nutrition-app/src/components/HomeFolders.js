@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Table } from "reactstrap";
 
 const HomeFolders = () => {
     return (
@@ -11,9 +12,29 @@ const HomeFolders = () => {
                     </ol>
                 </nav>
             </div>
-            <ul>
-                <li><Link to="/home">Exercises</Link></li>
-            </ul>
+            <Table light>
+                <thead>
+                    <tr>
+                        <th>Folders</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li><Link style={{ textDecoration: 'none', color: 'black' }} to="/home">Exercises</Link></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                    <td>
+                        <ul>
+                                <li><Link style={{ textDecoration: 'none', color: 'black' }} to="/home">Nutrition</Link></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </Table>
         </div>
     )
 }

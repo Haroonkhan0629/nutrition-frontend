@@ -5,8 +5,6 @@ import axios from "axios";
 
 import { API_URL } from "../constants";
 
-axios.defaults.withCredentials = true;
-
 class ConfirmRemovalModal extends Component {
   state = {
     modal: false
@@ -34,7 +32,7 @@ class ConfirmRemovalModal extends Component {
         </Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
           <ModalHeader toggle={this.toggle}>
-            Do you really want to delete this food?
+            Do you really want to delete this exercise?
           </ModalHeader>
 
           <ModalFooter>

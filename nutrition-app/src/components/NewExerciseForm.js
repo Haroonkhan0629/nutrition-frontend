@@ -5,8 +5,6 @@ import axios from "axios";
 
 import { API_URL } from "../constants";
 
-axios.defaults.withCredentials = true;
-
 class NewExerciseForm extends React.Component {
     state = {
         id: 0,

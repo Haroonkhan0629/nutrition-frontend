@@ -1,18 +1,47 @@
 import React, { Component } from "react";
+import { Button } from "reactstrap";
+import axios from "axios";
+
+import { API_URL } from "../constants";
 
 class DetailView extends Component {
     render() {
         const exercise = this.props.exercise
-        return (
-            <div>
-                <p>{exercise.muscle} </p>
-                <p>{exercise.difficulty} </p>
-                <p>{exercise.description} </p>
+        const profile = this.props.profile
+
+        function toggleSave(e) {
+            e.preventDefault()
+            axios.put(API_URL + exercise.id + "/bookmarks/")
+        }
+
+        if (profile) {
+            return (
                 <div>
-                <img src={exercise.image} alt="none"/>
+                    <p>Muscle: {exercise.muscle} </p>
+                    <p>Difficulty: {exercise.difficulty}/10 </p>
+                    <p>{exercise.description} </p>
+                    <div>
+                        <img src={exercise.image} alt="none" />
+                    </div>
+                    {exercise.saved === false ? (
+                        <Button style={{ textAlign: "center" }} onClick={toggleSave}>Save</Button>
+                    ) : (
+                        <Button style={{ textAlign: "center" }} onClick={toggleSave}>Unsave</Button>
+                    )}
                 </div>
-            </div>
-        )
+            )
+        } else {
+            return (
+                <div>
+                    <p>Muscle: {exercise.muscle} </p>
+                    <p>Difficulty: {exercise.difficulty}/10 </p>
+                    <p>{exercise.description} </p>
+                    <div>
+                        <img src={exercise.image} alt="none" />
+                    </div>
+                </div>
+            )
+        }
     }
 }
 
