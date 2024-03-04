@@ -37,7 +37,7 @@ const HomeFolders = ({ theme }) => {
                 <div>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item active" aria-current="page">Home</li>
+                            <li aria-current="page">Home</li>
                         </ol>
                     </nav>
                 </div>
@@ -51,7 +51,7 @@ const HomeFolders = ({ theme }) => {
                         <tr>
                             <td>
                                 <ul>
-                                    <li><Link style={{ textDecoration: 'none', color: 'black' }} to="/home">Exercises</Link></li>
+                                    <li><Link style={{ textDecoration: 'none', color: 'whitesmoke' }} to="/home">Exercises</Link></li>
                                 </ul>
                             </td>
                         </tr>

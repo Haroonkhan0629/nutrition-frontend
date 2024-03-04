@@ -5,32 +5,60 @@ import DetailModal from "./DetailModal";
 class BookmarksList extends Component {
     render() {
         const exercises = this.props.exercises;
+        const theme = this.props.theme
         const bookmarked = exercises.filter(exercise => exercise.saved === true)
 
-        return (
-            <div className="table-responsive">
-                <Table light>
-                    <thead>
-                        <tr>
-                            <th>Exercise</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {bookmarked.map(bookmark => (
-                            <tr key={bookmark.id}>
-                                <td> <DetailModal
-                                    exercise={bookmark}
-                                    profile={this.props.profile}
-                                /></td>
-                                <td align="center">
-                                </td>
+        if (theme === 'light') {
+            return (
+                <div className="table-responsive">
+                    <Table light>
+                        <thead>
+                            <tr>
+                                <th>Exercise</th>
                             </tr>
-                        ))
-                        }
-                    </tbody>
-                </Table>
-            </div>
-        );
+                        </thead>
+                        <tbody>
+                            {bookmarked.map(bookmark => (
+                                <tr key={bookmark.id}>
+                                    <td> <DetailModal
+                                        exercise={bookmark}
+                                        profile={this.props.profile}
+                                    /></td>
+                                    <td align="center">
+                                    </td>
+                                </tr>
+                            ))
+                            }
+                        </tbody>
+                    </Table>
+                </div>
+            );
+        } else if (theme === 'dark') {
+            return (
+                <div className="table-responsive">
+                    <Table dark>
+                        <thead>
+                            <tr>
+                                <th>Exercise</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {bookmarked.map(bookmark => (
+                                <tr key={bookmark.id}>
+                                    <td> <DetailModal
+                                        exercise={bookmark}
+                                        profile={this.props.profile}
+                                    /></td>
+                                    <td align="center">
+                                    </td>
+                                </tr>
+                            ))
+                            }
+                        </tbody>
+                    </Table>
+                </div>
+            );
+        }
     }
 }
 

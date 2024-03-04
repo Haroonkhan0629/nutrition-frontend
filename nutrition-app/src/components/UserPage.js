@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Table } from "reactstrap";
 
-function UserPage({ profile, logout }) {
+function UserPage({ profile, logout, theme }) {
 
   const [token, setToken] = useState(null);
   const [data, setData] = useState(null);
@@ -44,36 +44,69 @@ function UserPage({ profile, logout }) {
     );
   }, [token]);
 
-  return (
-    <div>
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item active" aria-current="page">Profile</li>
-        </ol>
-      </nav>
-      <Table light>
-        <tbody>
-          <tr>
-            <td>
-              <img className="profile-img" src={profile['picture']} alt={profile['name']} />
-            </td>
-            <td align="center">
-              <button onClick={logout} className='logout'>Logout</button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <h2>Welcome, {profile['name']}!</h2>
-            </td>
-            <td align="center">
-              <h3>Mail ID: {profile['email']}</h3>
-            </td>
-          </tr>
-        </tbody>
-      </Table>
-      <h1> {data} </h1>
-    </div>
-  );
+  if (theme === 'light') {
+    return (
+      <div>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">Profile</li>
+          </ol>
+        </nav>
+        <Table light>
+          <tbody>
+            <tr>
+              <td>
+                <img className="profile-img" src={profile['picture']} alt={profile['name']} />
+              </td>
+              <td align="center">
+                <button onClick={logout} className='logout'>Logout</button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h2>Welcome, {profile['name']}!</h2>
+              </td>
+              <td align="center">
+                <h3>Mail ID: {profile['email']}</h3>
+              </td>
+            </tr>
+          </tbody>
+        </Table>
+        <h1> {data} </h1>
+      </div>
+    );
+  } else if (theme === 'dark') {
+    return (
+      <div>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li aria-current="page">Profile</li>
+          </ol>
+        </nav>
+        <Table dark>
+          <tbody>
+            <tr>
+              <td>
+                <img className="profile-img" src={profile['picture']} alt={profile['name']} />
+              </td>
+              <td align="center">
+                <button onClick={logout} className='logout'>Logout</button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h2>Welcome, {profile['name']}!</h2>
+              </td>
+              <td align="center">
+                <h3>Mail ID: {profile['email']}</h3>
+              </td>
+            </tr>
+          </tbody>
+        </Table>
+        <h1> {data} </h1>
+      </div>
+    );
+  }
 }
 
 export default UserPage;

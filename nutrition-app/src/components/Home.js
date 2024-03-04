@@ -51,7 +51,7 @@ class Home extends Component {
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><Link to="/">Home</Link></li>
-              <li class="breadcrumb-item active" aria-current="page">Exercises</li>
+              <li aria-current="page">/ Exercises</li>
             </ol>
           </nav>
           <ExerciseList

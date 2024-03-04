@@ -37,6 +37,10 @@
     border: none;
   }
 
+  li {
+    color: whitesmoke;
+  }
+
 }
 
 .light {
@@ -186,15 +190,6 @@ nav {
 .profile-info h3 {
   margin-right: 8px;
   color: #fff;
-}
-
-button {
-  padding: 6px 12px;
-  background-color: #fff;
-  color: #333;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
 }
 
 button {

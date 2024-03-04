@@ -33,14 +33,14 @@ const Settings = ({ theme, setTheme }) => {
             <div>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item active" aria-current="page">Settings</li>
+                        <li  aria-current="page">Settings</li>
                     </ol>
                 </nav>
                 <Table dark>
                     <tbody>
                         <tr>
                             <td>
-                                Dark Mode
+                                Light Mode
                             </td>
                             <td align="center">
                                 <Layout

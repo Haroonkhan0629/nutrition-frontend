@@ -1,12 +1,12 @@
 import React from "react";
 import UserPage from "./UserPage";
 
-function LoginPage({ profile, login, logout }) {
+function LoginPage({ profile, login, logout, theme }) {
     return (
         <div>
         {profile ? (
           <div>
-            <UserPage profile={profile} logout={logout} />
+            <UserPage profile={profile} logout={logout} theme={theme}/>
           </div>
         ) : (
             <div className="login-container">

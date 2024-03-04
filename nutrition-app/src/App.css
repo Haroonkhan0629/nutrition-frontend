@@ -85,5 +85,9 @@ input:checked + .slider:before {
 }
 
 .profile-img {
-  border-radius: 15px;
+  border-radius: 50px;
+}
+
+.dark-nav {
+  color: whitesmoke;
 }
