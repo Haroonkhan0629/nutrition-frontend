@@ -37,7 +37,7 @@ class DetailModal extends Component {
                 </Fragment>
             )
         } else if (theme === 'dark') {
-            let button = <Button className="view-button" style={{ backgroundColor: "#333", color: "whitesmoke", border: "none" }} onClick={this.toggle}>{exercise.name}</Button>;
+            let button = <Button className="view-button" style={{ backgroundColor: "rgb(32, 32, 32)", color: "whitesmoke", border: "none" }} onClick={this.toggle}>{exercise.name}</Button>;
             return (
                 <Fragment>
                     {button}
