@@ -40,7 +40,7 @@ class DetailModal extends Component {
             return (
                 <Fragment>
                     {button}
-                    <Modal isOpen={this.state.modal} toggle={this.toggle}>
+                    <Modal isOpen={this.state.modal} toggle={this.toggle} style={{background: "black"}}>
                         <ModalHeader>{exercise.name}</ModalHeader>
 
                         <ModalBody dark>
