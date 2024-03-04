@@ -31,11 +31,11 @@ class ConfirmRemovalModal extends Component {
           Remove
         </Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
-          <ModalHeader toggle={this.toggle}>
+          <ModalHeader style={{backgroundColor: "#333", color: "whitesmoke"}} toggle={this.toggle}>
             Do you really want to delete this exercise?
           </ModalHeader>
 
-          <ModalFooter>
+          <ModalFooter style={{backgroundColor: "#333", color: "whitesmoke"}}>
             <Button type="button" onClick={() => this.toggle()}>
               Cancel
             </Button>

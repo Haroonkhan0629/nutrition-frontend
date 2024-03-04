@@ -17,10 +17,11 @@
 
   .input-wrapper {
     background-color: #222020;
+    box-shadow: 0px 0px 8px rgb(0, 0, 0);
   }
 
   .results {
-    background-color: #222020;
+    background-color: #333;
   }
 
   .search-input {
@@ -32,13 +33,18 @@
   }
 
   .view-button {
-    background-color: #222020;
+    background-color: #333;
     color: whitesmoke;
     border: none;
   }
 
   li {
     color: whitesmoke;
+  }
+
+  .bottom-nav-link,
+  .nav-link {
+    color: #a7aebb !important;
   }
 
 }
@@ -51,8 +57,8 @@
 .navbar {
   border-bottom: solid 1px #EBEBEB;
   box-shadow:
-  inset 0px -11px 8px -10px #CCC,
-  inset 0px -11px 30px -5px #CCC;
+    inset 0px -11px 8px -10px #CCC,
+    inset 0px -11px 30px -5px #CCC;
 }
 
 .bottom-tab-nav {
@@ -329,9 +335,8 @@ li {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
-
-

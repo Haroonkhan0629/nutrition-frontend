@@ -21,7 +21,7 @@ class DetailView extends Component {
                     <p>Difficulty: {exercise.difficulty}/10 </p>
                     <p>{exercise.description} </p>
                     <div>
-                        <img src={exercise.image} alt="none" />
+                        <img className="exercise-image" src={exercise.image} alt="none" />
                     </div>
                     {exercise.saved === false ? (
                         <Button style={{ textAlign: "center" }} onClick={toggleSave}>Save</Button>
@@ -37,7 +37,7 @@ class DetailView extends Component {
                     <p>Difficulty: {exercise.difficulty}/10 </p>
                     <p>{exercise.description} </p>
                     <div>
-                        <img src={exercise.image} alt="none" />
+                        <img className="exercise-image" src={exercise.image} alt="none" />
                     </div>
                 </div>
             )

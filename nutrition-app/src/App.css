@@ -95,3 +95,9 @@ input:checked + .slider:before {
 .table-margin {
   margin-bottom: 100px;
 }
+
+.exercise-image {
+  border-radius: 10px;
+}
+
+

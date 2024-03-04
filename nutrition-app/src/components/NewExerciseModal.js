@@ -37,9 +37,9 @@ class NewExerciseModal extends Component {
             <Fragment>
                 {button}
                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
-                    <ModalHeader toggle={this.toggle}>{title}</ModalHeader>
+                    <ModalHeader style={{backgroundColor: "#333", color: "whitesmoke"}} toggle={this.toggle}>{title}</ModalHeader>
 
-                    <ModalBody>
+                    <ModalBody style={{backgroundColor: "#333", color: "whitesmoke"}}>
                         <NewExerciseForm
                             resetState={this.props.resetState}
                             toggle={this.toggle}
