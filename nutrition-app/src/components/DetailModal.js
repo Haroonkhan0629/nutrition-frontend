@@ -40,10 +40,10 @@ class DetailModal extends Component {
             return (
                 <Fragment>
                     {button}
-                    <Modal isOpen={this.state.modal} toggle={this.toggle} styles={{ overlay: { background: "black" } }}>
+                    <Modal isOpen={this.state.modal} toggle={this.toggle} >
                         <ModalHeader>{exercise.name}</ModalHeader>
 
-                        <ModalBody>
+                        <ModalBody style={{backgroundColor: "black", color: "whitesmoke"}}>
                             <DetailView
                                 resetState={this.props.resetState}
                                 toggle={this.toggle}
