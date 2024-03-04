@@ -4,7 +4,14 @@ import Layout from "./Layout";
 const Settings = () => {
     return (
         <div>
-            <Layout />
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active" aria-current="page">Settings</li>
+                </ol>
+            </nav>
+            <div className="darkmode">
+                <Layout />
+            </div>
         </div>
     )
 }

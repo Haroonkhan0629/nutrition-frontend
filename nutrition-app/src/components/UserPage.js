@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import LoginNav from "./LoginNav"
 
 function UserPage({ profile, logout }) {
 
@@ -46,7 +45,19 @@ function UserPage({ profile, logout }) {
 
   return (
     <div>
-      <LoginNav profile={profile} logout={logout} />
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active" aria-current="page">Profile</li>
+        </ol>
+      </nav>
+      <div className="logo">
+        <img src={profile['picture']} alt={profile['name']} />
+        <h2>Welcome, {profile['name']}!</h2>
+      </div>
+      <div className="profile-info">
+        <h3>Mail ID: {profile['email']}</h3>
+        <button onClick={logout}>Logout</button>
+      </div>
       <h1> {data} </h1>
     </div>
   );

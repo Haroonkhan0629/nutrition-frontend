@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Container } from "reactstrap";
 import ExerciseList from "./ExerciseList";
 import NewExerciseModal from "./NewExerciseModal";
 import { Link } from "react-router-dom";
@@ -30,7 +29,7 @@ class Home extends Component {
     const profile = this.props.profile
     if (profile) {
       return (
-        <Container style={{ marginTop: "20px" }}>
+        <div>
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><Link to="/">Home</Link></li>
@@ -43,11 +42,11 @@ class Home extends Component {
             resetState={this.resetState}
           />
           <NewExerciseModal create={true} resetState={this.resetState} />
-        </Container>
+        </div>
       );
     } else {
       return (
-        <Container style={{ marginTop: "20px" }}>
+        <div>
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><Link to="/">Home</Link></li>
@@ -59,7 +58,7 @@ class Home extends Component {
             profile={profile}
             resetState={this.resetState}
           />
-        </Container>
+        </div>
       )
     }
   }

@@ -15,15 +15,15 @@ const tabs = [{
 }, {
   route: "/login",
   icon: faUserCircle,
-  label: "User"
+  label: "Profile"
 }, {
   route: "/bookmarks",
   icon: faBookmark,
-  label: "Bookmarks"
+  label: "Saved"
 }, {
   route: "/settings",
   icon: faGear,
-  label: "Settings"
+  label: "Setting"
 }]
 
 const Navigation = () => {
@@ -42,6 +42,11 @@ const Navigation = () => {
             <NavItem>
               <NavLink to="/login" className="nav-link">
                 Login
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink to="/bookmarks" className="nav-link">
+                Bookmarks
               </NavLink>
             </NavItem>
             <NavItem>

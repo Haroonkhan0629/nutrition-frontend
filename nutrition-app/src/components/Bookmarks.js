@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Container } from "reactstrap";
 import BookmarksList from "./BookmarksList";
 
 import axios from "axios";
@@ -28,10 +27,10 @@ class Bookmarks extends Component {
         const profile = this.props.profile
         if (profile) {
             return (
-                <Container style={{ marginTop: "20px" }}>
+                <div>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item active" aria-current="page">Bookmarked</li>
+                            <li class="breadcrumb-item active" aria-current="page">Saved</li>
                         </ol>
                     </nav>
                     <BookmarksList
@@ -39,22 +38,22 @@ class Bookmarks extends Component {
                         resetState={this.resetState}
                         profile={profile}
                     />
-                </Container>
+                </div>
             );
         } else {
             return (
-                <Container style={{ marginTop: "20px" }}>
+                <div>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item active" aria-current="page">Bookmarked</li>
+                            <li class="breadcrumb-item active" aria-current="page">Saved</li>
                         </ol>
                     </nav>
                     <div className="login-container">
                         <h2>
-                        Only Users Can Bookmark Exercises
+                        Only Users Can Save Exercises
                         </h2>
                     </div>
-                </Container>
+                </div>
             )
         }
     }
