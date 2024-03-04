@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Table } from "reactstrap";
 
 function UserPage({ profile, logout }) {
 
@@ -50,14 +51,26 @@ function UserPage({ profile, logout }) {
           <li class="breadcrumb-item active" aria-current="page">Profile</li>
         </ol>
       </nav>
-      <div className="logo">
-        <img src={profile['picture']} alt={profile['name']} />
-        <h2>Welcome, {profile['name']}!</h2>
-      </div>
-      <div className="profile-info">
-        <h3>Mail ID: {profile['email']}</h3>
-        <button onClick={logout}>Logout</button>
-      </div>
+      <Table light>
+        <tbody>
+          <tr>
+            <td>
+              <img className="profile-img" src={profile['picture']} alt={profile['name']} />
+            </td>
+            <td align="center">
+              <button onClick={logout} className='logout'>Logout</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h2>Welcome, {profile['name']}!</h2>
+            </td>
+            <td align="center">
+              <h3>Mail ID: {profile['email']}</h3>
+            </td>
+          </tr>
+        </tbody>
+      </Table>
       <h1> {data} </h1>
     </div>
   );

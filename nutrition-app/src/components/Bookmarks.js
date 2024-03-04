@@ -43,11 +43,6 @@ class Bookmarks extends Component {
         } else {
             return (
                 <div>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item active" aria-current="page">Saved</li>
-                        </ol>
-                    </nav>
                     <div className="login-container">
                         <h2>
                         Only Users Can Save Exercises

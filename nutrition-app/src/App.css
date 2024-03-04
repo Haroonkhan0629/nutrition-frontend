@@ -68,3 +68,22 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+.create-button {
+  margin-bottom: 100px;
+}
+
+.logout {
+  padding: 10px 20px;
+  background-color: #61dafb;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.profile-img {
+  border-radius: 15px;
+}
