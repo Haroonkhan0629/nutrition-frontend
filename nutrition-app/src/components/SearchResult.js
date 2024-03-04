@@ -1,11 +1,12 @@
 import React from "react"
 import DetailModal from "./DetailModal";
 
-const SearchResult = ({ result }) => {
+const SearchResult = ({ result, profile }) => {
     return (
         <div className="result">
             <h4><DetailModal
                 exercise={result}
+                profile={profile}
             /></h4>
         </div>
     )

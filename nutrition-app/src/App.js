@@ -86,7 +86,7 @@ const App = () => {
         <Route path="/settings" element={<Settings profile={profile} />} />
         <Route path="/home" element={<Home profile={profile} />} />
         <Route path="/" element={<HomeFolders />} />
-        <Route path="/search" element={<Search />} />
+        <Route path="/search" element={<Search profile={profile}/>} />
         <Route path="/bookmarks" element={<Bookmarks profile={profile} />} />
       </Routes>
     </div>
