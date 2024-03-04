@@ -91,3 +91,7 @@ input:checked + .slider:before {
 .dark-nav {
   color: whitesmoke;
 }
+
+.table-margin {
+  margin-bottom: 100px;
+}

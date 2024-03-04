@@ -23,6 +23,7 @@ class BookmarksList extends Component {
                                     <td> <DetailModal
                                         exercise={bookmark}
                                         profile={this.props.profile}
+                                        theme={theme}
                                     /></td>
                                     <td align="center">
                                     </td>
@@ -48,6 +49,7 @@ class BookmarksList extends Component {
                                     <td> <DetailModal
                                         exercise={bookmark}
                                         profile={this.props.profile}
+                                        theme={theme}
                                     /></td>
                                     <td align="center">
                                     </td>

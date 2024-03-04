@@ -32,6 +32,7 @@ class ExerciseList extends Component {
                                             <td> <DetailModal
                                                 exercise={exercise}
                                                 profile={profile}
+                                                theme={theme}
                                             /></td>
                                             <td align="center">
                                                 <NewExerciseModal
@@ -74,6 +75,7 @@ class ExerciseList extends Component {
                                             <td> <DetailModal
                                                 exercise={exercise}
                                                 profile={profile}
+                                                theme={theme}
                                             /></td>
                                             <td align="center">
                                                 <NewExerciseModal
@@ -122,6 +124,7 @@ class ExerciseList extends Component {
                                             <td> <DetailModal
                                                 exercise={exercise}
                                                 profile={profile}
+                                                theme={theme}
                                             /></td>
                                         </tr>
                                     ))
@@ -152,6 +155,7 @@ class ExerciseList extends Component {
                                             <td> <DetailModal
                                                 exercise={exercise}
                                                 profile={profile}
+                                                theme={theme}
                                             /></td>
                                         </tr>
                                     ))

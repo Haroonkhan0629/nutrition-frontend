@@ -15,26 +15,47 @@ class DetailModal extends Component {
 
     render() {
         const exercise = this.props.exercise
-        let button = <Button className="view-button" style={{backgroundColor: "white", color: "black", border: "none"}} onClick={this.toggle}>{exercise.name}</Button>;
+        const theme = this.props.theme
 
+        if (theme === 'light') {
+            let button = <Button className="view-button" style={{ backgroundColor: "white", color: "black", border: "none" }} onClick={this.toggle}>{exercise.name}</Button>;
+            return (
+                <Fragment>
+                    {button}
+                    <Modal isOpen={this.state.modal} toggle={this.toggle}>
+                        <ModalHeader>{exercise.name}</ModalHeader>
 
-        return (
-            <Fragment>
-                {button}
-                <Modal isOpen={this.state.modal} toggle={this.toggle}>
-                    <ModalHeader>{exercise.name}</ModalHeader>
+                        <ModalBody>
+                            <DetailView
+                                resetState={this.props.resetState}
+                                toggle={this.toggle}
+                                exercise={this.props.exercise}
+                                profile={this.props.profile}
+                            />
+                        </ModalBody>
+                    </Modal>
+                </Fragment>
+            )
+        } else if (theme === 'dark') {
+            let button = <Button className="view-button" style={{ backgroundColor: "black", color: "white", border: "none" }} onClick={this.toggle}>{exercise.name}</Button>;
+            return (
+                <Fragment>
+                    {button}
+                    <Modal dark isOpen={this.state.modal} toggle={this.toggle}>
+                        <ModalHeader>{exercise.name}</ModalHeader>
 
-                    <ModalBody>
-                        <DetailView
-                            resetState={this.props.resetState}
-                            toggle={this.toggle}
-                            exercise={this.props.exercise}
-                            profile={this.props.profile}
-                        />
-                    </ModalBody>
-                </Modal>
-            </Fragment>
-        )
+                        <ModalBody>
+                            <DetailView
+                                resetState={this.props.resetState}
+                                toggle={this.toggle}
+                                exercise={this.props.exercise}
+                                profile={this.props.profile}
+                            />
+                        </ModalBody>
+                    </Modal>
+                </Fragment>
+            )
+        }
     }
 }
 

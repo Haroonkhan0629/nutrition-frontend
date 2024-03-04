@@ -47,7 +47,7 @@ class Home extends Component {
       );
     } else {
       return (
-        <div>
+        <div className="table-margin">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><Link to="/">Home</Link></li>
