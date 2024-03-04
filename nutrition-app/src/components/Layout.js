@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
-function Layout() {
-  const [theme, setTheme] = useState('light');
+function Layout({ theme, setTheme }) {
 
   const toggleTheme = () => {
     if (theme === 'light') {

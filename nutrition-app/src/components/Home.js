@@ -40,6 +40,7 @@ class Home extends Component {
             exercises={this.state.exercises}
             profile={profile}
             resetState={this.resetState}
+            theme={this.props.theme}
           />
           <NewExerciseModal create={true} resetState={this.resetState} />
         </div>
@@ -57,6 +58,7 @@ class Home extends Component {
             exercises={this.state.exercises}
             profile={profile}
             resetState={this.resetState}
+            theme={this.props.theme}
           />
         </div>
       )

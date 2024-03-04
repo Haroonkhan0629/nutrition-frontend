@@ -15,6 +15,7 @@ import axios from 'axios';
 const App = () => {
   const [user, setUser] = useState(null);
   const [profile, setProfile] = useState(null);
+  const [theme, setTheme] = useState('light');
 
   const login = useGoogleLogin({
     onSuccess: (codeResponse) => setUser(codeResponse),
@@ -82,12 +83,12 @@ const App = () => {
     <div>
       <Navigation />
       <Routes>
-        <Route path="/login" element={<LoginPage profile={profile} logout={logout} login={login} />} />
-        <Route path="/settings" element={<Settings profile={profile} />} />
-        <Route path="/home" element={<Home profile={profile} />} />
-        <Route path="/" element={<HomeFolders />} />
+        <Route path="/login" element={<LoginPage profile={profile} logout={logout} login={login} theme={theme}/>} />
+        <Route path="/settings" element={<Settings profile={profile} theme={theme} setTheme={setTheme}/>} />
+        <Route path="/home" element={<Home profile={profile} theme={theme}/>} />
+        <Route path="/" element={<HomeFolders theme={theme}/>} />
         <Route path="/search" element={<Search profile={profile}/>} />
-        <Route path="/bookmarks" element={<Bookmarks profile={profile} />} />
+        <Route path="/bookmarks" element={<Bookmarks profile={profile} theme={theme} />} />
       </Routes>
     </div>
   );
