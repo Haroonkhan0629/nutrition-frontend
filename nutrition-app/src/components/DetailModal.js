@@ -16,9 +16,9 @@ class DetailModal extends Component {
     render() {
         const exercise = this.props.exercise
         const theme = this.props.theme
+        let button = <Button className="view-button" style={{ backgroundColor: "white", color: "black", border: "none" }} onClick={this.toggle}>{exercise.name}</Button>;
 
         if (theme === 'light') {
-            let button = <Button className="view-button" style={{ backgroundColor: "white", color: "black", border: "none" }} onClick={this.toggle}>{exercise.name}</Button>;
             return (
                 <Fragment>
                     {button}
@@ -37,14 +37,13 @@ class DetailModal extends Component {
                 </Fragment>
             )
         } else if (theme === 'dark') {
-            let button = <Button className="view-button" style={{ backgroundColor: "black", color: "white", border: "none" }} onClick={this.toggle}>{exercise.name}</Button>;
             return (
                 <Fragment>
                     {button}
-                    <Modal dark isOpen={this.state.modal} toggle={this.toggle}>
+                    <Modal isOpen={this.state.modal} toggle={this.toggle}>
                         <ModalHeader>{exercise.name}</ModalHeader>
 
-                        <ModalBody>
+                        <ModalBody dark>
                             <DetailView
                                 resetState={this.props.resetState}
                                 toggle={this.toggle}
