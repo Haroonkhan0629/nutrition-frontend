@@ -14,28 +14,28 @@ class NewExerciseModal extends Component {
     };
 
     render() {
-        const create = this.props.create;
-
-        let title = "Editing exercise";
-        let button = <Button onClick={this.toggle}>Edit</Button>;
-        if (create) {
-            title = "Creating exercise";
-
-            button = (
-                <Button
-                    color="primary"
-                    className="float-right create-button"
-                    onClick={this.toggle}
-                    style={{ minWidth: "200px" }}
-                >
-                    Create
-                </Button>
-            );
-        }
-
         const theme = this.props.theme
 
         if (theme === 'light') {
+            const create = this.props.create;
+            let title = "Editing exercise";
+            let button = <Button onClick={this.toggle}>Edit</Button>;
+
+            if (create) {
+                title = "Creating exercise";
+
+                button = (
+                    <Button
+                        color="primary"
+                        className="float-right create-button"
+                        onClick={this.toggle}
+                        style={{ minWidth: "200px" }}
+                    >
+                        Create
+                    </Button>
+                );
+            }
+
             return (
                 <Fragment>
                     {button}
@@ -53,6 +53,24 @@ class NewExerciseModal extends Component {
                 </Fragment>
             );
         } else if (theme === 'dark') {
+            const create = this.props.create;
+            let title = "Editing exercise";
+            let button = <Button onClick={this.toggle}>Edit</Button>;
+
+            if (create) {
+                title = "Creating exercise";
+
+                button = (
+                    <Button
+                        color="primary"
+                        className="float-right create-button"
+                        onClick={this.toggle}
+                        style={{ minWidth: "200px" }}
+                    >
+                        Create
+                    </Button>
+                );
+            }
             return (
                 <Fragment>
                     {button}
