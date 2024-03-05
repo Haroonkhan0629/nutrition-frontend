@@ -30,7 +30,7 @@ const Navigation = () => {
 
   return (
     <div>
-      <nav className="navbar top-nav navbar-expand-md navbar-light d-none d-lg-block fixed-top" role="navigation">
+      <nav className="navbar top-nav navbar-expand-md navbar-light d-none d-lg-block sticky-top" role="navigation">
         <div className="container-fluid">
           <a className="navbar-brand" href="/home">Exercises</a>
           <Nav className="ml-auto">

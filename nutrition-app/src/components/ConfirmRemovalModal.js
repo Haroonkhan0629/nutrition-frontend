@@ -25,31 +25,61 @@ class ConfirmRemovalModal extends Component {
   };
 
   render() {
-    return (
-      <Fragment>
-        <Button color="danger" onClick={() => this.toggle()}>
-          Remove
-        </Button>
-        <Modal isOpen={this.state.modal} toggle={this.toggle}>
-          <ModalHeader style={{backgroundColor: "#333", color: "whitesmoke"}} toggle={this.toggle}>
-            Do you really want to delete this exercise?
-          </ModalHeader>
+    const theme = this.props.theme
 
-          <ModalFooter style={{backgroundColor: "#333", color: "whitesmoke"}}>
-            <Button type="button" onClick={() => this.toggle()}>
-              Cancel
-            </Button>
-            <Button
-              type="button"
-              color="primary"
-              onClick={() => this.deleteFood(this.props.id)}
-            >
-              Yes
-            </Button>
-          </ModalFooter>
-        </Modal>
-      </Fragment>
-    );
+    if (theme === 'light') {
+      return (
+        <Fragment>
+          <Button color="danger" onClick={() => this.toggle()}>
+            Remove
+          </Button>
+          <Modal isOpen={this.state.modal} toggle={this.toggle}>
+            <ModalHeader toggle={this.toggle}>
+              Do you really want to delete this exercise?
+            </ModalHeader>
+
+            <ModalFooter>
+              <Button type="button" onClick={() => this.toggle()}>
+                Cancel
+              </Button>
+              <Button
+                type="button"
+                color="primary"
+                onClick={() => this.deleteFood(this.props.id)}
+              >
+                Yes
+              </Button>
+            </ModalFooter>
+          </Modal>
+        </Fragment>
+      );
+    } else if (theme === 'dark') {
+      return (
+        <Fragment>
+          <Button color="danger" onClick={() => this.toggle()}>
+            Remove
+          </Button>
+          <Modal isOpen={this.state.modal} toggle={this.toggle}>
+            <ModalHeader style={{ backgroundColor: "#333", color: "whitesmoke" }} toggle={this.toggle}>
+              Do you really want to delete this exercise?
+            </ModalHeader>
+
+            <ModalFooter style={{ backgroundColor: "#333", color: "whitesmoke" }}>
+              <Button type="button" onClick={() => this.toggle()}>
+                Cancel
+              </Button>
+              <Button
+                type="button"
+                color="primary"
+                onClick={() => this.deleteFood(this.props.id)}
+              >
+                Yes
+              </Button>
+            </ModalFooter>
+          </Modal>
+        </Fragment>
+      );
+    }
   }
 }
 

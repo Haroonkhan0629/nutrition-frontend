@@ -39,11 +39,13 @@ class ExerciseList extends Component {
                                                     create={false}
                                                     exercise={exercise}
                                                     resetState={this.props.resetState}
+                                                    theme={theme}
                                                 />
                                                 &nbsp;&nbsp;
                                                 <ConfirmRemovalModal
                                                     id={exercise.id}
                                                     resetState={this.props.resetState}
+                                                    theme={theme}
                                                 />
                                             </td>
                                         </tr>
@@ -82,11 +84,13 @@ class ExerciseList extends Component {
                                                     create={false}
                                                     exercise={exercise}
                                                     resetState={this.props.resetState}
+                                                    theme={theme}
                                                 />
                                                 &nbsp;&nbsp;
                                                 <ConfirmRemovalModal
                                                     id={exercise.id}
                                                     resetState={this.props.resetState}
+                                                    theme={theme}
                                                 />
                                             </td>
                                         </tr>

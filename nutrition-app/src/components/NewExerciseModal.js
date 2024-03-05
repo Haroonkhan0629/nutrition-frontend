@@ -33,22 +33,43 @@ class NewExerciseModal extends Component {
             );
         }
 
-        return (
-            <Fragment>
-                {button}
-                <Modal isOpen={this.state.modal} toggle={this.toggle}>
-                    <ModalHeader style={{backgroundColor: "#333", color: "whitesmoke"}} toggle={this.toggle}>{title}</ModalHeader>
+        const theme = this.props.theme
 
-                    <ModalBody style={{backgroundColor: "#333", color: "whitesmoke"}}>
-                        <NewExerciseForm
-                            resetState={this.props.resetState}
-                            toggle={this.toggle}
-                            exercise={this.props.exercise}
-                        />
-                    </ModalBody>
-                </Modal>
-            </Fragment>
-        );
+        if (theme === 'light') {
+            return (
+                <Fragment>
+                    {button}
+                    <Modal isOpen={this.state.modal} toggle={this.toggle}>
+                        <ModalHeader toggle={this.toggle}>{title}</ModalHeader>
+
+                        <ModalBody>
+                            <NewExerciseForm
+                                resetState={this.props.resetState}
+                                toggle={this.toggle}
+                                exercise={this.props.exercise}
+                            />
+                        </ModalBody>
+                    </Modal>
+                </Fragment>
+            );
+        } else if (theme === 'dark') {
+            return (
+                <Fragment>
+                    {button}
+                    <Modal isOpen={this.state.modal} toggle={this.toggle}>
+                        <ModalHeader style={{ backgroundColor: "#333", color: "whitesmoke" }} toggle={this.toggle}>{title}</ModalHeader>
+
+                        <ModalBody style={{ backgroundColor: "#333", color: "whitesmoke" }}>
+                            <NewExerciseForm
+                                resetState={this.props.resetState}
+                                toggle={this.toggle}
+                                exercise={this.props.exercise}
+                            />
+                        </ModalBody>
+                    </Modal>
+                </Fragment>
+            );
+        }
     }
 }
 
