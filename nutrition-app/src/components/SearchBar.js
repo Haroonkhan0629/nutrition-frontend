@@ -10,7 +10,6 @@ const SearchBar = ({ setResults }) => {
         const data = await response.json()
         const results = data.filter((result) => {
             return searchedValue && 
-            searchedValue.toLowerCase() &&
             result && 
             result.name && 
             result.name.toLowerCase().includes(searchedValue) 
