@@ -44,7 +44,7 @@ class Home extends Component {
               resetState={this.resetState}
               theme={theme}
             />
-            <NewExerciseModal create={true} resetState={this.resetState} />
+            <NewExerciseModal create={true} resetState={this.resetState} theme={theme}/>
           </div>
         );
       } else if (theme === 'dark') {
@@ -62,7 +62,7 @@ class Home extends Component {
               resetState={this.resetState}
               theme={theme}
             />
-            <NewExerciseModal create={true} resetState={this.resetState} />
+            <NewExerciseModal create={true} resetState={this.resetState} theme={theme}/>
           </div>
         );
       }
