@@ -12,7 +12,7 @@ const SearchBar = ({ setResults }) => {
             return searchedValue && 
             result && 
             result.name && 
-            result.name.toLowerCase().includes(searchedValue) 
+            result.name.includes(searchedValue) 
         })
         setResults(results)
     }
