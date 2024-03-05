@@ -11,9 +11,7 @@ const SearchBar = ({ setResults }) => {
         const results = data.filter((result) => {
             return searchedValue && 
             result && 
-            result.name && 
-            result.name.toLowerCase().includes(searchedValue) &&
-            result.name.toUpperCase().includes(searchedValue)
+            result.name 
         })
         setResults(results)
     }
