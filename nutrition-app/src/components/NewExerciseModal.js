@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Button, Modal, ModalHeader, ModalBody } from "reactstrap";
 import NewExerciseForm from "./NewExerciseForm";
-import { faPencil, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 
 class NewExerciseModal extends Component {
     state = {
@@ -20,7 +19,7 @@ class NewExerciseModal extends Component {
         if (theme === 'light') {
             const create = this.props.create;
             let title = "Editing exercise";
-            let button = <Button onClick={this.toggle}>{faPencil}</Button>;
+            let button = <Button onClick={this.toggle}>Edit</Button>;
 
             if (create) {
                 title = "Creating exercise";
@@ -32,7 +31,7 @@ class NewExerciseModal extends Component {
                         onClick={this.toggle}
                         style={{ minWidth: "200px" }}
                     >
-                        {faPlusCircle}
+                        Create
                     </Button>
                 );
             }
