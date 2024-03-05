@@ -276,7 +276,7 @@ li {
   display: flex;
   flex-direction: column;
   margin-top: 50px;
-  max-height: 500px;
+  max-height: 600px;
   overflow-y: scroll;
   position: absolute;
   left: 0;
