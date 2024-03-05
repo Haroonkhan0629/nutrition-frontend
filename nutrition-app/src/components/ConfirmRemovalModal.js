@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Modal, ModalHeader, Button, ModalFooter } from "reactstrap";
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 import axios from "axios";
 
@@ -31,7 +32,7 @@ class ConfirmRemovalModal extends Component {
       return (
         <Fragment>
           <Button color="danger" onClick={() => this.toggle()}>
-            Remove
+            {faTrash}
           </Button>
           <Modal isOpen={this.state.modal} toggle={this.toggle}>
             <ModalHeader toggle={this.toggle}>
