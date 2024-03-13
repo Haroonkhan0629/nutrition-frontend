@@ -49,7 +49,7 @@ Fit2Go-Pro is a modified version of a previous app (Fit2Go) that newly incorpora
 * User Specific Data: If the app is edited, the data will specifically be saved to the current user account.
 
 ## <a name="deployment"></a>Project Links
-* [App](https://fit2go-pro.netlify.app/)
+* [Application/Website](https://fit2go-pro.netlify.app/)
 * [Wireframe/Wireflow](https://whimsical.com/fit2go-pro-P7YJwD3xHe2DwMvWGVk149)
 * [Trello Page](https://trello.com/b/tAz85bkf/nutritional-app)
 * [Github Repo](https://github.com/Haroonkhan0629/Fit2Go)
