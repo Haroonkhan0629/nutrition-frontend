@@ -38,7 +38,7 @@ Fit2Go-Pro is a modified version of a previous app (Fit2Go) that newly incorpora
 * Dark Mode
 
 ## <a name="sketch"></a>Whiteboard Images
-<img src="https://postimg.cc/dDnqyzYh" alt="Original Sketch"/>
+<img src="[https://postimg.cc/dDnqyzYh](https://i.postimg.cc/jKLNnqzm/image.jpg?dl=1)" alt="Original Sketch"/>
 
 ## <a name="trello"></a>Trello Planning (MVP)
 * Users can view a list of exercises on the index page
