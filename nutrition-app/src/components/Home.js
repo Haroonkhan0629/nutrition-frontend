@@ -8,19 +8,23 @@ import axios from "axios";
 import { API_URL } from "../constants";
 
 class Home extends Component {
+  // Holds the exercise records shown in the table.
   state = {
     exercises: []
   };
 
+  // Fetches data as soon as this page loads.
   componentDidMount() {
     this.resetState();
   }
 
+  // Calls the API and stores exercises in component state.
   getExercise = () => {
     axios.get(API_URL
     ).then(res => this.setState({ exercises: res.data }));
   };
 
+  // Shared refresh function passed to child components.
   resetState = () => {
     this.getExercise();
   };

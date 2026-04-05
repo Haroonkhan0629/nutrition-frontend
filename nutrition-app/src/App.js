@@ -10,18 +10,24 @@ import Settings from './components/Settings';
 import LoginPage from './components/LoginPage';
 import Bookmarks from './components/Bookmarks';
 import axios from 'axios';
+import { AUTH_BASE_URL } from './constants';
 
 
 const App = () => {
+  // Keeps temporary Google login response details.
   const [user, setUser] = useState(null);
+  // Stores the signed-in user's profile used across the app.
   const [profile, setProfile] = useState(null);
+  // Controls light or dark color mode.
   const [theme, setTheme] = useState('light');
 
+  // Starts Google sign-in and saves the returned access data.
   const login = useGoogleLogin({
     onSuccess: (codeResponse) => setUser(codeResponse),
     onError: (error) => console.log('login failed:', error)
   });
 
+  // When Google login succeeds, fetch full user details from Google.
   useEffect(() => {
     if (user) {
       console.log(user)
@@ -44,6 +50,7 @@ const App = () => {
     }
   }, [user]);
 
+  // Once profile is available, register or update this user in Django backend.
   useEffect(() => {
     if (profile === null) {
       console.log('profile null');
@@ -58,7 +65,7 @@ const App = () => {
 
       console.log(profileData);
 
-      axios.post('https://nutrition-backend-qire.onrender.com/api/auth/register/', profileData).then(
+      axios.post(`${AUTH_BASE_URL}register/`, profileData).then(
         (response) => {
           console.log(response['data']);
         },
@@ -69,6 +76,7 @@ const App = () => {
     }
   }, [profile]);
 
+  // Signs out from Google and clears local profile data.
   const logout = () => {
     googleLogout();
     setProfile(null);

@@ -9,8 +9,10 @@ class ExerciseList extends Component {
         const exercises = this.props.exercises;
         const profile = this.props.profile
         const theme = this.props.theme
+        // Logged-in users can edit and remove exercises.
         if (profile) {
             if (theme === 'light') {
+                // Show placeholder row when API returns no exercises.
                 return (
                     <div className="table-responsive">
                         <Table light>
@@ -56,6 +58,7 @@ class ExerciseList extends Component {
                     </div>
                 );
             } else if (theme === 'dark') {
+                // Show placeholder row when API returns no exercises.
                 return (
                     <div className="table-responsive">
                         <Table dark>
@@ -107,6 +110,7 @@ class ExerciseList extends Component {
 
         } else {
             if (theme === 'light') {
+                // Guests can browse details, but edit/remove actions are hidden.
                 return (
                     <div className="table-responsive">
                         <Table light>
@@ -138,6 +142,7 @@ class ExerciseList extends Component {
                     </div>
                 )
             } else if (theme === 'dark') {
+                // Guests can browse details, but edit/remove actions are hidden.
                 return (
                     <div className="table-responsive">
                         <Table dark>

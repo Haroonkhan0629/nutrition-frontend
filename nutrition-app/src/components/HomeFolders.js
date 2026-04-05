@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Table } from "reactstrap";
 
 const HomeFolders = ({ theme }) => {
+    // Switches folder page styling based on selected theme.
     if (theme === 'light') {
         return (
             <div>

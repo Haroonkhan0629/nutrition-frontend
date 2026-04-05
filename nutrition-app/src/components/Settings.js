@@ -3,6 +3,7 @@ import Layout from "./Layout";
 import { Table } from "reactstrap";
 
 const Settings = ({ theme, setTheme }) => {
+    // Shows the same switcher with labels that match the active theme.
     if (theme === 'light') {
         return (
             <div>

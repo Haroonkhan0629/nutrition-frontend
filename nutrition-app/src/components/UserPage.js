@@ -2,13 +2,20 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Table } from "reactstrap";
+import { AUTH_BASE_URL } from '../constants';
 
 function UserPage({ profile, logout, theme }) {
 
+  // Stores API token received from backend login.
   const [token, setToken] = useState(null);
+  // Stores welcome message returned by protected endpoint.
   const [data, setData] = useState(null);
 
+  // Logs in to backend after a short delay and saves auth token.
   useEffect(() => {
+    if (!profile) {
+      return;
+    }
 
     const delay = 3000;
 
@@ -18,7 +25,7 @@ function UserPage({ profile, logout, theme }) {
     };
 
     const timeout = setTimeout(() => {
-      axios.post('https://nutrition-backend-qire.onrender.com/api/auth/login/', credentials)
+      axios.post(`${AUTH_BASE_URL}login/`, credentials)
         .then((response) => {
           console.log(response['data']);
           setToken(response['data']['token']);
@@ -26,11 +33,12 @@ function UserPage({ profile, logout, theme }) {
     }, delay);
 
     return () => clearTimeout(timeout);
-  }, []);
+  }, [profile]);
 
+  // Uses saved token to call a protected endpoint.
   useEffect(() => {
 
-    axios.get("https://nutrition-backend-qire.onrender.com/api/auth/hello/", {
+    axios.get(`${AUTH_BASE_URL}hello/`, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Token ' + token

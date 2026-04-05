@@ -2,6 +2,7 @@ import React from "react"
 import DetailModal from "./DetailModal";
 
 const SearchResult = ({ result, profile, theme }) => {
+    // Each result row reuses the detail modal component.
     return (
         <div className="result">
             <h4><DetailModal

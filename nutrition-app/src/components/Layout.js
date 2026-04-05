@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 
 function Layout({ theme, setTheme }) {
 
+  // Switches between light and dark mode.
   const toggleTheme = () => {
     if (theme === 'light') {
       setTheme('dark');
@@ -10,6 +11,7 @@ function Layout({ theme, setTheme }) {
     }
   };
 
+  // Keeps the page body class in sync with current theme.
   useEffect(() => {
     document.body.className = theme;
   }, [theme]);

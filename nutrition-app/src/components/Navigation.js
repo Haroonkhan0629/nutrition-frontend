@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faHome, faUserCircle, faGear, faBookmark } from '@fortawesome/free-solid-svg-icons';
 
+// One tab list powers the bottom mobile navigation.
 const tabs = [{
   route: "",
   icon: faHome,

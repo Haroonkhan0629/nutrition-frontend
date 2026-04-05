@@ -7,9 +7,15 @@ import reportWebVitals from './reportWebVitals';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
+const googleClientId = (process.env.REACT_APP_CLIENT_ID || '').trim();
+
+if (!googleClientId) {
+  console.warn('Google OAuth is disabled: REACT_APP_CLIENT_ID is missing.');
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <GoogleOAuthProvider clientId={process.env.REACT_APP_CLIENT_ID}>
+  <GoogleOAuthProvider clientId={googleClientId || 'missing-client-id.apps.googleusercontent.com'}>
     <React.StrictMode>
       <Router>
         <App />

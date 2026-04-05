@@ -2,6 +2,7 @@ import React from "react";
 import UserPage from "./UserPage";
 
 function LoginPage({ profile, login, logout, theme }) {
+  // If signed in, show user information; otherwise show Google sign-in button.
     return (
         <div>
         {profile ? (

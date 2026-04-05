@@ -6,16 +6,19 @@ import axios from "axios";
 import { API_URL } from "../constants";
 
 class ConfirmRemovalModal extends Component {
+  // Tracks whether the confirmation popup is open.
   state = {
     modal: false
   };
 
+  // Opens or closes the popup.
   toggle = () => {
     this.setState(previous => ({
       modal: !previous.modal
     }));
   };
 
+  // Deletes an exercise, refreshes the list, then closes the popup.
   deleteFood = id => {
     console.log(id)
     axios.delete(API_URL + id).then(() => {

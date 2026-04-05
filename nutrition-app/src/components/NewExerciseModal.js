@@ -3,10 +3,12 @@ import { Button, Modal, ModalHeader, ModalBody } from "reactstrap";
 import NewExerciseForm from "./NewExerciseForm";
 
 class NewExerciseModal extends Component {
+    // Tracks whether the create/edit popup is open.
     state = {
         modal: false
     }
 
+    // Opens or closes the modal.
     toggle = () => {
         this.setState(previous => ({
             modal: !previous.modal
@@ -18,10 +20,12 @@ class NewExerciseModal extends Component {
 
         if (theme === 'light') {
             const create = this.props.create;
+            // Default mode is editing an existing exercise.
             let title = "Editing exercise";
             let button = <Button onClick={this.toggle}>Edit</Button>;
 
             if (create) {
+                // When creating, show create wording and primary button style.
                 title = "Creating exercise";
 
                 button = (
@@ -54,10 +58,12 @@ class NewExerciseModal extends Component {
             );
         } else if (theme === 'dark') {
             const create = this.props.create;
+            // Default mode is editing an existing exercise.
             let title = "Editing exercise";
             let button = <Button onClick={this.toggle}>Edit</Button>;
 
             if (create) {
+                // When creating, show create wording and primary button style.
                 title = "Creating exercise";
 
                 button = (

@@ -3,10 +3,12 @@ import { Button, Modal, ModalHeader, ModalBody } from "reactstrap";
 import DetailView from "./DetailView";
 
 class DetailModal extends Component {
+    // Controls whether the detail popup is visible.
     state = {
         modal: false
     };
 
+    // Switches the detail popup between open and closed.
     toggle = () => {
         this.setState(previous => ({
             modal: !previous.modal

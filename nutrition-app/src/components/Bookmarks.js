@@ -6,19 +6,23 @@ import axios from "axios";
 import { API_URL } from "../constants";
 
 class Bookmarks extends Component {
+    // Holds all exercises returned by the API.
     state = {
         exercises: []
     };
 
+    // Loads data once when this screen opens.
     componentDidMount() {
         this.resetState();
     }
 
+    // Gets the latest exercise list from backend.
     getExercise = () => {
         axios.get(API_URL
         ).then(res => this.setState({ exercises: res.data }));
     };
 
+    // Central refresh helper used by child components.
     resetState = () => {
         this.getExercise();
     };

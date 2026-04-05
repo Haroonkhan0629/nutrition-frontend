@@ -9,6 +9,7 @@ class DetailView extends Component {
         const exercise = this.props.exercise
         const profile = this.props.profile
 
+        // Toggles bookmark status for this exercise on the server.
         function toggleSave(e) {
             e.preventDefault()
             axios.put(API_URL + exercise.id + "/bookmarks/")

@@ -6,6 +6,7 @@ class BookmarksList extends Component {
     render() {
         const exercises = this.props.exercises;
         const theme = this.props.theme
+        // Shows only exercises that were marked as saved.
         const bookmarked = exercises.filter(exercise => exercise.saved === true)
 
         if (theme === 'light') {
